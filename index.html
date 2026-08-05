@@ -3,215 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصتي الرقمية المتكاملة</title>
+    <title>أكبر مكتبة للموارد والمنتجات الرقمية</title>
+    <!-- تضمين مكتبة Tailwind CSS للتصميم -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Cairo', sans-serif; }
-        html { scroll-behavior: smooth; }
-        .product-card { transition: all 0.3s ease; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        
+        /* تنسيق صندوق اختيار اللغات الخاص بجوجل ليظهر بشكل مدمج ونظيف */
+        .goog-te-combo {
+            padding: 4px 8px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            background-color: #ffffff;
+            font-size: 13px;
+            color: #1e293b;
+            outline: none;
+        }
+        /* إخفاء شريط جوجل العلوي المزعج */
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0px !important; }
+        .goog-tooltip { display: none !important; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- شريط إعلاني متحرك في الأعلى -->
-    <div class="bg-indigo-600 text-white text-xs md:text-sm py-2 text-center font-medium">
-        🔥 عرض لفترة محدودة: اطلب أي منتج رقمي اليوم واحصل على استشارة سريعة مجاناً عبر الواتساب!
-    </div>
-
-    <!-- شريط التنقل العلوي -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2 space-x-reverse">
-                <span class="text-2xl font-bold text-indigo-600">📦 منصتي الرقمية</span>
-            </div>
-            <nav class="hidden md:flex space-x-6 space-x-reverse font-medium text-gray-600">
-                <a href="#home" class="hover:text-indigo-600 transition">الرئيسية</a>
-                <a href="#resources" class="hover:text-indigo-600 transition">الموارد الشاملة</a>
-                <a href="#store" class="hover:text-indigo-600 transition">سوق المنتجات</a>
-                <a href="#services" class="hover:text-indigo-600 transition">الاستشارات والخدمات</a>
-                <a href="#blog" class="hover:text-indigo-600 transition">المدونة</a>
-            </nav>
-            <div>
-                <a href="#services" class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition">إقترح مورداً</a>
-            </div>
+    <!-- شريط العنوان العلوي الأصلي مع أداة اللغات -->
+    <header class="bg-white shadow-sm py-3 px-4 md:px-8 flex justify-between items-center border-b border-gray-100">
+        <div class="flex items-center gap-3">
+            <a href="https://wa.me/213666164823?text=مرحباً، أريد اقتراح مورد أو أداة جديدة" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium transition shadow-sm">
+                إقترح مورداً
+            </a>
+            <!-- أداة ترجمة جوجل للغات الست -->
+            <div id="google_translate_element"></div>
+        </div>
+        
+        <div class="flex items-center gap-2">
+            <h1 class="text-base sm:text-lg font-bold text-blue-600">منصتي الرقمية</h1>
+            <span class="text-xl">📦</span>
         </div>
     </header>
 
-    <!-- قسم الرئيسية وبحث الأدوات -->
-    <section id="home" class="bg-gradient-to-r from-purple-700 to-indigo-600 text-white py-16 px-4 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h1 class="text-3xl md:text-5xl font-extrabold mb-4">أكبر مكتبة للموارد والمنتجات الرقمية</h1>
-            <p class="text-indigo-100 text-lg mb-8">اكتشف أفضل الأدوات والمنتجات الجاهزة لتطوير عملك الرقمي.</p>
-            <div class="bg-white p-2 rounded-xl shadow-lg flex items-center">
-                <input type="text" placeholder="ابحث عن أداة، كتاب، قالب..." class="w-full px-4 py-3 text-gray-800 focus:outline-none">
-                <button class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">بحث</button>
+    <!-- قسم الهيرو (البطل) ذو الخلفية المتدرجة البنفسجية الأصلية -->
+    <section class="bg-gradient-to-br from-indigo-700 via-purple-600 to-blue-600 text-white py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">أكبر مكتبة للموارد والمنتجات الرقمية</h2>
+            <p class="text-indigo-100 text-sm sm:text-base max-w-xl mx-auto">اكتشف أفضل الأدوات والمنتجات الجاهزة لتطوير عملك الرقمي وتحقيق أرباحك.</p>
+            
+            <!-- خانة البحث -->
+            <div class="bg-white p-2 rounded-2xl shadow-lg max-w-xl mx-auto flex items-center">
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-xl text-sm font-medium transition">بحث</button>
+                <input type="text" placeholder="ابحث عن أداة، كتاب، قالب..." class="w-full px-4 text-gray-700 bg-transparent outline-none text-right text-sm">
             </div>
         </div>
     </section>
 
-    <!-- مساحة إعلانية Google AdSense -->
-    <div class="container mx-auto px-4 my-8">
-        <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center text-gray-400 bg-white">
-            <span class="bg-blue-100 text-blue-800 text-xs px-2.5 py-0.5 rounded font-bold mb-2 inline-block">Ad</span>
+    <!-- مساحة إعلانية (Google AdSense) -->
+    <div class="max-w-4xl mx-auto px-4 my-6">
+        <div class="border-2 border-dashed border-gray-200 rounded-2xl p-6 text-center text-gray-400 text-sm bg-white">
+            <span class="bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full font-medium inline-block mb-2">Ad</span>
             <p>مساحة إعلانية (Google AdSense)</p>
         </div>
     </div>
 
-    <!-- قسم الموارد والأدوات الشاملة -->
-    <section id="resources" class="container mx-auto px-4 py-12">
-        <h2 class="text-2xl font-bold mb-6 text-gray-800 border-r-4 border-indigo-600 pr-3">دليل الموارد والأدوات الرقمية</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
-                <div>
-                    <span class="bg-purple-100 text-purple-800 text-xs px-2.5 py-0.5 rounded font-bold">تصميم</span>
-                    <h3 class="font-bold text-lg mt-2 mb-1">Canva (كانفا)</h3>
-                    <p class="text-gray-600 text-sm mb-4">أفضل أداة تصميم لإنشاء منشورات السوشيال ميديا والعروض التقديمية.</p>
-                </div>
-                <a href="https://www.canva.com" target="_blank" class="block text-center bg-indigo-50 text-indigo-600 py-2 rounded-lg font-semibold text-sm hover:bg-indigo-600 hover:text-white transition">زيارة الأداة</a>
-            </div>
+    <!-- المحتوى الرئيسي للمكتبة والخدمات -->
+    <main class="max-w-4xl mx-auto p-4 space-y-6">
+        
+        <h3 class="text-xl font-bold text-gray-800 border-r-4 border-indigo-600 pr-3">دليل الموارد والأدوات الرقمية</h3>
 
-            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
-                <div>
-                    <span class="bg-blue-100 text-blue-800 text-xs px-2.5 py-0.5 rounded font-bold">ذكاء اصطناعي</span>
-                    <h3 class="font-bold text-lg mt-2 mb-1">ChatGPT</h3>
-                    <p class="text-gray-600 text-sm mb-4">مساعد ذكي لتوليد الأفكار، كتابة المحتوى، وصياغة النصوص.</p>
-                </div>
-                <a href="https://chat.openai.com" target="_blank" class="block text-center bg-indigo-50 text-indigo-600 py-2 rounded-lg font-semibold text-sm hover:bg-indigo-600 hover:text-white transition">زيارة الأداة</a>
-            </div>
-
-            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
-                <div>
-                    <span class="bg-green-100 text-green-800 text-xs px-2.5 py-0.5 rounded font-bold">مونتاج فيديو</span>
-                    <h3 class="font-bold text-lg mt-2 mb-1">CapCut</h3>
-                    <p class="text-gray-600 text-sm mb-4">تطبيق وموقع احترافي لتعديل ومونتاج الفيديوهات القصيرة بسهولة.</p>
-                </div>
-                <a href="https://www.capcut.com" target="_blank" class="block text-center bg-indigo-50 text-indigo-600 py-2 rounded-lg font-semibold text-sm hover:bg-indigo-600 hover:text-white transition">زيارة الأداة</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- سوق المنتجات الرقمية (مربوط بالواتساب) -->
-    <section id="store" class="container mx-auto px-4 py-12">
-        <h2 class="text-2xl font-bold mb-6 text-gray-800 border-r-4 border-indigo-600 pr-3">سوق المنتجات الرقمية الجاهزة</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- شبكة المنتجات -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             
             <!-- المنتج الأول -->
-            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between relative overflow-hidden">
-                <span class="absolute top-0 left-0 bg-red-500 text-white text-[10px] px-3 py-1 rounded-br-lg font-bold">الأكثر طلباً 🔥</span>
-                <div class="mt-2">
-                    <span class="bg-indigo-100 text-indigo-800 text-xs px-2.5 py-0.5 rounded font-bold">كتاب إلكتروني</span>
-                    <h3 class="font-bold text-lg mt-2 mb-2">دليل المبتدئ للنجاح الرقمي</h3>
-                    <p class="text-gray-600 text-sm mb-4">دليل شامل يوضح لك خطوتك الأولى نحو بناء مشروعك أونلاين من الصفر.</p>
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <div>
+                    <span class="bg-green-100 text-green-800 text-xs px-2.5 py-1 rounded-full font-medium">متاح الآن</span>
+                    <h4 class="font-bold text-lg mt-3">استشارات النجاح الرقمي والأرباح</h4>
+                    <p class="text-gray-500 text-sm mt-1">خدمة مخصصة للمشاريع الناشئة وتطوير العمل على الإنترنت.</p>
                 </div>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-indigo-600 font-bold">طلب مباشر</span>
-                    <a href="https://wa.me/213XXXXXXXXX?text=مرحباً، أريـد شراء دليل المبتدئ للنجاح الرقمي" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition">شراء الآن</a>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-blue-600 font-bold text-sm">التواصل المباشر</span>
+                    <a href="https://wa.me/213666164823?text=مرحباً، أريد استشارة النجاح الرقمي" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-green-700 transition">طلب عبر واتساب</a>
                 </div>
             </div>
 
             <!-- المنتج الثاني -->
-            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
                 <div>
-                    <span class="bg-green-100 text-green-800 text-xs px-2.5 py-0.5 rounded font-bold">أداة تنظيم</span>
-                    <h3 class="font-bold text-lg mt-2 mb-2">جدول الميزانية الذكية والأرباح</h3>
-                    <p class="text-gray-600 text-sm mb-4">جدول لتتبع الإيرادات، المصروفات، وحساب صافي الأرباح للمشاريع المصغرة.</p>
+                    <span class="bg-yellow-100 text-yellow-800 text-xs px-2.5 py-1 rounded-full font-medium">الأكثر طلباً</span>
+                    <h4 class="font-bold text-lg mt-3">إدارة الردود الاحترافية</h4>
+                    <p class="text-gray-500 text-sm mt-1">أنظمة متكاملة للرد الآلي والتعامل مع العملاء بكفاءة عالية.</p>
                 </div>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-indigo-600 font-bold">طلب مباشر</span>
-                    <a href="https://wa.me/213XXXXXXXXX?text=مرحباً، أريـد شراء جدول الميزانية الذكية والأرباح" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition">شراء الآن</a>
-                </div>
-            </div>
-
-            <!-- المنتج الثالث -->
-            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
-                <div>
-                    <span class="bg-yellow-100 text-yellow-800 text-xs px-2.5 py-0.5 rounded font-bold">نصوص تسويقية</span>
-                    <h3 class="font-bold text-lg mt-2 mb-2">دليل الردود الاحترافية للعملاء</h3>
-                    <p class="text-gray-600 text-sm mb-4">نصوص ورسائل واتساب جاهزة ومجربة لإغلاق المبيعات والرد على الزبائن.</p>
-                </div>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-indigo-600 font-bold">طلب مباشر</span>
-                    <a href="https://wa.me/213XXXXXXXXX?text=مرحباً، أريـد شراء دليل الردود الاحترافية للعملاء" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition">شراء الآن</a>
-                </div>
-            </div>
-
-            <!-- المنتج الرابع -->
-            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
-                <div>
-                    <span class="bg-purple-100 text-purple-800 text-xs px-2.5 py-0.5 rounded font-bold">كنز رقمي</span>
-                    <h3 class="font-bold text-lg mt-2 mb-2">دليل أدوات العمل أونلاين</h3>
-                    <p class="text-gray-600 text-sm mb-4">أقوى المواقع والمصادر المجانية النادرة لتطوير وإدارة عملك الرقمي بكفاءة.</p>
-                </div>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-indigo-600 font-bold">طلب مباشر</span>
-                    <a href="https://wa.me/213666164823?text=مرحباً، أريـد شراء دليل أدوات العمل أونلاين" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition">شراء الآن</a>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-blue-600 font-bold text-sm">التواصل المباشر</span>
+                    <a href="https://wa.me/213666164823?text=مرحباً، أريد خدمة إدارة الردود" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-green-700 transition">طلب عبر واتساب</a>
                 </div>
             </div>
 
         </div>
-    </section>
 
-    <!-- قسم الاستشارات والخدمات -->
-    <section id="services" class="bg-indigo-50 py-12">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-r-4 border-indigo-600 pr-3">حجز استشارة أو خدمة خاصة</h2>
-            <div class="bg-white rounded-xl shadow-md p-6">
-                <form class="space-y-4">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="اسمك الكامل" class="w-full border p-3 rounded-lg focus:outline-indigo-600">
-                        <input type="email" placeholder="بريدك الإلكتروني" class="w-full border p-3 rounded-lg focus:outline-indigo-600">
+        <!-- قسم الأدوات المجانية الإضافية -->
+        <section class="mt-8">
+            <h3 class="text-xl font-bold mb-4 text-gray-700 border-r-4 border-indigo-600 pr-3">🛠️ أدوات رقمية مجانية للزوار</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- أداة 1 -->
+                <div class="bg-indigo-50 border border-indigo-100 p-5 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2.5 py-1 rounded-full font-medium">مجاني 100%</span>
+                        <h4 class="font-bold text-lg mt-3 text-indigo-900">مولد روابط واتساب المباشرة</h4>
+                        <p class="text-indigo-700 text-sm mt-1">أداة تساعدك على إنشاء رابط واتساب مع رسالة جاهزة لعملائك.</p>
                     </div>
-                    <select class="w-full border p-3 rounded-lg focus:outline-indigo-600">
-                        <option>اختر نوع الخدمة / الاستشارة</option>
-                        <option>استشارة خاصة (عبر الإنترنت)</option>
-                        <option>إعداد خطة مخصصة</option>
-                    </select>
-                    <textarea placeholder="تفاصيل إضافية عن طلبك..." rows="4" class="w-full border p-3 rounded-lg focus:outline-indigo-600"></textarea>
-                    <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">إرسال الطلب</button>
-                </form>
-            </div>
-        </div>
-    </section>
+                    <div class="mt-4 pt-3 border-t border-indigo-200 flex justify-end">
+                        <a href="https://wa.link/" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
+                    </div>
+                </div>
 
-    <!-- قسم المدونة والمقالات -->
-    <section id="blog" class="container mx-auto px-4 py-12">
-        <h2 class="text-2xl font-bold mb-6 text-gray-800 border-r-4 border-indigo-600 pr-3">أحدث المقالات والنصائح</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="product-card bg-white rounded-xl shadow-md p-5">
-                <span class="text-xs text-indigo-600 font-bold">تسويق رقمي</span>
-                <h3 class="font-bold text-lg mt-1 mb-2">كيف تبدأ العمل الحر بدون خبرة مسبقة؟</h3>
-                <p class="text-gray-600 text-sm mb-4">دليل مبسط للمبتدئين لاختيار المجال المناسب وبدء تحقيق أول أرباح عبر الإنترنت.</p>
-                <a href="#" class="text-indigo-600 font-semibold text-sm hover:underline">قراءة المقال ←</a>
-            </div>
-            <div class="product-card bg-white rounded-xl shadow-md p-5">
-                <span class="text-xs text-indigo-600 font-bold">أدوات رقمية</span>
-                <h3 class="font-bold text-lg mt-1 mb-2">أفضل أدوات الذكاء الاصطناعي لتوفير الوقت</h3>
-                <p class="text-gray-600 text-sm mb-4">تعرف على الأدوات التي ستضاعف إنتاجيتك وتساعدك في إدارة مهامك اليومية بكفاءة.</p>
-                <a href="#" class="text-indigo-600 font-semibold text-sm hover:underline">قراءة المقال ←</a>
-            </div>
-        </div>
-    </section>
+                <!-- أداة 2 -->
+                <div class="bg-indigo-50 border border-indigo-100 p-5 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2.5 py-1 rounded-full font-medium">مجاني 100%</span>
+                        <h4 class="font-bold text-lg mt-3 text-indigo-900">ضغط وتصغير الصور أونلاين</h4>
+                        <p class="text-indigo-700 text-sm mt-1">قلل حجم صور موقعك لتحسين سرعة التصفح لعملائك.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-indigo-200 flex justify-end">
+                        <a href="https://tinypng.com/" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
+                    </div>
+                </div>
 
-    <!-- قسم النشرة البريدية -->
-    <section class="bg-gray-900 text-white py-12 px-4 text-center">
-        <div class="max-w-xl mx-auto">
-            <h3 class="text-2xl font-bold mb-2">انضم إلى نشرتنا البريدية</h3>
-            <p class="text-gray-400 text-sm mb-6">احصل على أحدث الأدوات والعروض الحصرية مباشرة في بريدك الإلكتروني.</p>
-            <div class="flex flex-col sm:flex-row gap-2">
-                <input type="email" placeholder="أدخل بريدك الإلكتروني..." class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none">
-                <button class="bg-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">اشتراك</button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- التذييل (Footer) -->
-    <footer class="bg-gray-950 text-gray-400 py-6 text-center text-sm">
-        <p>جميع الحقوق محفوظة © 2026 - منصتي الرقمية</p>
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="text-center py-6 text-gray-400 text-xs mt-10 border-t border-gray-100 bg-white">
+        جميع الحقوق محفوظة © 2026
     </footer>
 
+    <!-- سكربت ترجمة جوجل للغات الست (العربية، الفرنسية، الإنجليزية، الإسبانية، الروسية، والصينية) -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ar',
+                includedLanguages: 'ar,fr,en,es,ru,zh-CN',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
-                        </html>
-                        
+                    </html>
+                    
