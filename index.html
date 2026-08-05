@@ -7,9 +7,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Cairo', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .product-card { transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+
+    <!-- شريط إعلاني متحرك في الأعلى -->
+    <div class="bg-indigo-600 text-white text-xs md:text-sm py-2 text-center font-medium">
+        🔥 عرض لفترة محدودة: اطلب أي منتج رقمي اليوم واحصل على استشارة سريعة مجاناً عبر الواتساب!
+    </div>
 
     <!-- شريط التنقل العلوي -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
@@ -18,11 +26,11 @@
                 <span class="text-2xl font-bold text-indigo-600">📦 منصتي الرقمية</span>
             </div>
             <nav class="hidden md:flex space-x-6 space-x-reverse font-medium text-gray-600">
-                <a href="#home" class="hover:text-indigo-600">الرئيسية</a>
-                <a href="#resources" class="hover:text-indigo-600">الموارد الشاملة</a>
-                <a href="#store" class="hover:text-indigo-600">سوق المنتجات</a>
-                <a href="#services" class="hover:text-indigo-600">الاستشارات والخدمات</a>
-                <a href="#blog" class="hover:text-indigo-600">المدونة</a>
+                <a href="#home" class="hover:text-indigo-600 transition">الرئيسية</a>
+                <a href="#resources" class="hover:text-indigo-600 transition">الموارد الشاملة</a>
+                <a href="#store" class="hover:text-indigo-600 transition">سوق المنتجات</a>
+                <a href="#services" class="hover:text-indigo-600 transition">الاستشارات والخدمات</a>
+                <a href="#blog" class="hover:text-indigo-600 transition">المدونة</a>
             </nav>
             <div>
                 <a href="#services" class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition">إقترح مورداً</a>
@@ -55,7 +63,7 @@
         <h2 class="text-2xl font-bold mb-6 text-gray-800 border-r-4 border-indigo-600 pr-3">دليل الموارد والأدوات الرقمية</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
                 <div>
                     <span class="bg-purple-100 text-purple-800 text-xs px-2.5 py-0.5 rounded font-bold">تصميم</span>
                     <h3 class="font-bold text-lg mt-2 mb-1">Canva (كانفا)</h3>
@@ -64,7 +72,7 @@
                 <a href="https://www.canva.com" target="_blank" class="block text-center bg-indigo-50 text-indigo-600 py-2 rounded-lg font-semibold text-sm hover:bg-indigo-600 hover:text-white transition">زيارة الأداة</a>
             </div>
 
-            <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
                 <div>
                     <span class="bg-blue-100 text-blue-800 text-xs px-2.5 py-0.5 rounded font-bold">ذكاء اصطناعي</span>
                     <h3 class="font-bold text-lg mt-2 mb-1">ChatGPT</h3>
@@ -73,7 +81,7 @@
                 <a href="https://chat.openai.com" target="_blank" class="block text-center bg-indigo-50 text-indigo-600 py-2 rounded-lg font-semibold text-sm hover:bg-indigo-600 hover:text-white transition">زيارة الأداة</a>
             </div>
 
-            <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
                 <div>
                     <span class="bg-green-100 text-green-800 text-xs px-2.5 py-0.5 rounded font-bold">مونتاج فيديو</span>
                     <h3 class="font-bold text-lg mt-2 mb-1">CapCut</h3>
@@ -88,11 +96,12 @@
     <!-- سوق المنتجات الرقمية (مربوط بالواتساب) -->
     <section id="store" class="container mx-auto px-4 py-12">
         <h2 class="text-2xl font-bold mb-6 text-gray-800 border-r-4 border-indigo-600 pr-3">سوق المنتجات الرقمية الجاهزة</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <!-- المنتج الأول -->
-            <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
-                <div>
+            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between relative overflow-hidden">
+                <span class="absolute top-0 left-0 bg-red-500 text-white text-[10px] px-3 py-1 rounded-br-lg font-bold">الأكثر طلباً 🔥</span>
+                <div class="mt-2">
                     <span class="bg-indigo-100 text-indigo-800 text-xs px-2.5 py-0.5 rounded font-bold">كتاب إلكتروني</span>
                     <h3 class="font-bold text-lg mt-2 mb-2">دليل المبتدئ للنجاح الرقمي</h3>
                     <p class="text-gray-600 text-sm mb-4">دليل شامل يوضح لك خطوتك الأولى نحو بناء مشروعك أونلاين من الصفر.</p>
@@ -104,7 +113,7 @@
             </div>
 
             <!-- المنتج الثاني -->
-            <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
                 <div>
                     <span class="bg-green-100 text-green-800 text-xs px-2.5 py-0.5 rounded font-bold">أداة تنظيم</span>
                     <h3 class="font-bold text-lg mt-2 mb-2">جدول الميزانية الذكية والأرباح</h3>
@@ -117,7 +126,7 @@
             </div>
 
             <!-- المنتج الثالث -->
-            <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
                 <div>
                     <span class="bg-yellow-100 text-yellow-800 text-xs px-2.5 py-0.5 rounded font-bold">نصوص تسويقية</span>
                     <h3 class="font-bold text-lg mt-2 mb-2">دليل الردود الاحترافية للعملاء</h3>
@@ -130,7 +139,7 @@
             </div>
 
             <!-- المنتج الرابع -->
-            <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+            <div class="product-card bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
                 <div>
                     <span class="bg-purple-100 text-purple-800 text-xs px-2.5 py-0.5 rounded font-bold">كنز رقمي</span>
                     <h3 class="font-bold text-lg mt-2 mb-2">دليل أدوات العمل أونلاين</h3>
@@ -171,13 +180,13 @@
     <section id="blog" class="container mx-auto px-4 py-12">
         <h2 class="text-2xl font-bold mb-6 text-gray-800 border-r-4 border-indigo-600 pr-3">أحدث المقالات والنصائح</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white rounded-xl shadow-md p-5">
+            <div class="product-card bg-white rounded-xl shadow-md p-5">
                 <span class="text-xs text-indigo-600 font-bold">تسويق رقمي</span>
                 <h3 class="font-bold text-lg mt-1 mb-2">كيف تبدأ العمل الحر بدون خبرة مسبقة؟</h3>
                 <p class="text-gray-600 text-sm mb-4">دليل مبسط للمبتدئين لاختيار المجال المناسب وبدء تحقيق أول أرباح عبر الإنترنت.</p>
                 <a href="#" class="text-indigo-600 font-semibold text-sm hover:underline">قراءة المقال ←</a>
             </div>
-            <div class="bg-white rounded-xl shadow-md p-5">
+            <div class="product-card bg-white rounded-xl shadow-md p-5">
                 <span class="text-xs text-indigo-600 font-bold">أدوات رقمية</span>
                 <h3 class="font-bold text-lg mt-1 mb-2">أفضل أدوات الذكاء الاصطناعي لتوفير الوقت</h3>
                 <p class="text-gray-600 text-sm mb-4">تعرف على الأدوات التي ستضاعف إنتاجيتك وتساعدك في إدارة مهامك اليومية بكفاءة.</p>
