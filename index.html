@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصتي الرقمية - الخدمات والمنتجات</title>
-    <!-- تضمين مكتبة Tailwind CSS للتصميم السريع -->
+    <title>منصتي الرقمية - الخدمات والأدوات المجانية</title>
+    <!-- تضمين مكتبة Tailwind CSS للتصميم -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: system-ui, -apple-system, sans-serif; }
+        /* تنسيق عنصر ترجمة جوجل ليكون متناسقاً ونظيفاً داخل الصفحة */
+        .goog-te-combo {
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+            font-size: 14px;
+            color: #374151;
+            outline: none;
+        }
+        /* إخفاء شريط شعار جوجل العلوي إن ظهر */
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0px !important; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- شريط اللغات العلوي -->
-    <header class="bg-white shadow-sm py-3 px-4 flex justify-between items-center">
-        <h1 class="text-lg font-bold text-blue-600">منصتي الرقمية</h1>
-        <!-- أداة ترجمة جوجل للغات الست -->
+    <!-- شريط العلوي المنظم -->
+    <header class="bg-white shadow-sm py-3 px-4 md:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <h1 class="text-xl font-bold text-blue-600">منصتي الرقمية</h1>
+        <!-- أداة اختيار اللغات بشكل أنيق -->
         <div id="google_translate_element"></div>
     </header>
 
@@ -25,10 +38,10 @@
         <!-- قسم ترحيبي -->
         <section class="bg-white p-6 rounded-2xl shadow-sm text-center">
             <h2 class="text-2xl font-bold mb-2">مرحباً بك في منصتنا الرقمية</h2>
-            <p class="text-gray-600">اختر الخدمة أو المنتج المناسب لك وتواصل معنا مباشرة عبر واتساب.</p>
+            <p class="text-gray-600">اختر الخدمة أو الأداة المجانية المناسبة لك، وتواصل معنا مباشرة عبر واتساب عند الحاجة.</p>
         </section>
 
-        <!-- المنتجات أو الخدمات -->
+        <!-- الخدمات والمنتجات المدفوعة أو الأساسية -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             
             <!-- المنتج الأول -->
@@ -58,6 +71,39 @@
             </div>
 
         </div>
+
+        <!-- قسم الأدوات المجانية الجديدة -->
+        <section class="mt-8">
+            <h3 class="text-xl font-bold mb-4 text-gray-700">🛠️ أدوات رقمية مجانية للزوار</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- أداة 1 -->
+                <div class="bg-indigo-50 border border-indigo-100 p-5 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2.5 py-1 rounded-full font-medium">مجاني 100%</span>
+                        <h4 class="font-bold text-lg mt-3 text-indigo-900">مولد روابط واتساب المباشرة</h4>
+                        <p class="text-indigo-700 text-sm mt-1">أداة تساعدك على إنشاء رابط واتساب مع رسالة جاهزة لعملائك.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-indigo-200 flex justify-end">
+                        <a href="https://wa.link/" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
+                    </div>
+                </div>
+
+                <!-- أداة 2 -->
+                <div class="bg-indigo-50 border border-indigo-100 p-5 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2.5 py-1 rounded-full font-medium">مجاني 100%</span>
+                        <h4 class="font-bold text-lg mt-3 text-indigo-900">ضغط وتصغير الصور أونلاين</h4>
+                        <p class="text-indigo-700 text-sm mt-1">قلل حجم صور موقعك لتحسين سرعة التصفح لعملائك.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-indigo-200 flex justify-end">
+                        <a href="https://tinypng.com/" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <!-- تذييل الصفحة -->
@@ -65,7 +111,7 @@
         جميع الحقوق محفوظة © 2026
     </footer>
 
-    <!-- سكربت تفعيل ترجمة جوجل للغات: العربية، الفرنسية، الإنجليزية، الإسبانية، الروسية، والصينية -->
+    <!-- سكربت ترجمة جوجل -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -79,4 +125,5 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
-</html>
+    </html>
+    
