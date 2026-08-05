@@ -8,34 +8,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: system-ui, -apple-system, sans-serif; }
-        
-        /* تنسيق مخصص لصندوق اختيار اللغات ليظهر بشكل مرتب جداً على الهواتف */
-        .goog-te-combo {
-            padding: 6px 12px;
-            border-radius: 8px;
-            border: 1px solid #cbd5e1;
-            background-color: #ffffff;
-            font-size: 14px;
-            color: #1e293b;
-            outline: none;
-            max-width: 140px;
-        }
-        /* إخفاء شريط شعار جوجل المزعج إن ظهر */
-        .goog-te-banner-frame { display: none !important; }
-        body { top: 0px !important; }
-        
-        /* إخفاء تلميحات الترجمة الافتراضية لمنع أي تداخل بصري */
-        .goog-tooltip { display: none !important; }
-        .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- شريط العلوي المنظم بدقة للهواتف والشاشات الصغيرة -->
-    <header class="bg-white shadow-sm py-3 px-4 flex justify-between items-center border-b border-gray-100">
+    <!-- شريط العلوي المنظم والثابت -->
+    <header class="bg-white shadow-sm py-3 px-4 md:px-8 flex justify-between items-center border-b border-gray-100">
         <h1 class="text-lg font-bold text-blue-600">منصتي الرقمية</h1>
-        <!-- أداة اختيار اللغات -->
-        <div id="google_translate_element"></div>
+        
+        <!-- قائمة اختيار اللغات الثابتة والآمنة -->
+        <div class="flex items-center gap-1 bg-gray-100 p-1 rounded-xl text-xs font-medium">
+            <span class="px-2 py-1 bg-white text-blue-600 rounded-lg shadow-sm">عربي</span>
+            <a href="#fr" class="px-2 py-1 text-gray-600 hover:text-blue-600 transition">FR</a>
+            <a href="#en" class="px-2 py-1 text-gray-600 hover:text-blue-600 transition">EN</a>
+        </div>
     </header>
 
     <!-- المحتوى الرئيسي -->
@@ -116,19 +102,6 @@
     <footer class="text-center py-6 text-gray-400 text-xs mt-10">
         جميع الحقوق محفوظة © 2026
     </footer>
-
-    <!-- سكربت ترجمة جوجل للغات الست -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'ar',
-                includedLanguages: 'ar,fr,en,es,ru,zh-CN',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
