@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل الموارد الرقمية | مجتمعك الرقمي المفتوح</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <span class="text-2xl font-extrabold text-indigo-600">منصتي الرقمية</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 space-x-reverse font-medium text-gray-600">
+                <a href="#" class="hover:text-indigo-600 transition">الرئيسية</a>
+                <a href="#categories" class="hover:text-indigo-600 transition">التصنيفات</a>
+                <a href="#resources" class="hover:text-indigo-600 transition">أحدث الموارد</a>
+            </nav>
+            <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">
+                + إقترح مورداً
+            </button>
+        </div>
+    </header>
+
+    <section class="bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900 text-white py-20 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                أكبر مكتبة للموارد والأصول الرقمية
+            </h1>
+            <p class="text-lg md:text-xl text-indigo-200 mb-8">
+                اكتشف الأدوات، القوالب، والكتب المتاحة عبر الإنترنت في مكان واحد.
+            </p>
+            
+            <div class="relative max-w-2xl mx-auto">
+                <input type="text" id="searchInput" placeholder="ابحث عن أداة، قالب، أو كورسات..." 
+                       class="w-full pl-4 pr-12 py-4 rounded-xl text-gray-800 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 text-lg">
+                <button class="absolute left-3 top-3 bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
+                    بحث
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-2xl font-bold mb-8 text-gray-900 border-r-4 border-indigo-600 pr-3">التصنيفات الرئيسية</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center cursor-pointer">
+                <div class="text-3xl mb-2">🎨</div>
+                <h3 class="font-bold text-gray-800">التصميم والجرافيك</h3>
+                <p class="text-xs text-gray-500 mt-1">+500 قالب وأداة</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center cursor-pointer">
+                <div class="text-3xl mb-2">💻</div>
+                <h3 class="font-bold text-gray-800">البرمجة والتطوير</h3>
+                <p class="text-xs text-gray-500 mt-1">+350 مكتبة وكود</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center cursor-pointer">
+                <div class="text-3xl mb-2">📚</div>
+                <h3 class="font-bold text-gray-800">التعليم والكتب</h3>
+                <p class="text-xs text-gray-500 mt-1">+1200 مرجع كتاب</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center cursor-pointer">
+                <div class="text-3xl mb-2">⚡</div>
+                <h3 class="font-bold text-gray-800">أدوات الإنتاجية</h3>
+                <p class="text-xs text-gray-500 mt-1">+200 أداة عمل</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-12 flex-grow">
+        <h2 class="text-2xl font-bold mb-8 text-gray-900 border-r-4 border-indigo-600 pr-3">أبرز الموارد المضافة حديثاً</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition flex flex-col justify-between">
+                <div class="p-6">
+                    <span class="bg-indigo-50 text-indigo-600 text-xs font-semibold px-2.5 py-0.5 rounded-full">التصميم</span>
+                    <h3 class="font-bold text-lg mt-3 text-gray-900">مجموعة قوالب واجهات Figma مجانية</h3>
+                    <p class="text-gray-600 text-sm mt-2">حزمة كاملة تحتوي على أكثر من 50 مكوناً برمجياً جاهزاً للتعديل واستخدام في مشاريع الويب.</p>
+                </div>
+                <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                    <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">مجاني</span>
+                    <a href="#" class="text-indigo-600 font-semibold text-sm hover:underline">زيارة المورد ←</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition flex flex-col justify-between">
+                <div class="p-6">
+                    <span class="bg-purple-50 text-purple-600 text-xs font-semibold px-2.5 py-0.5 rounded-full">الإنتاجية</span>
+                    <h3 class="font-bold text-lg mt-3 text-gray-900">أداة تحويل وتنظيم ملفات PDF</h3>
+                    <p class="text-gray-600 text-sm mt-2">أداة أونلاين سريعة للدمج والضغط والتحويل لملفات PDF بدون الحاجة لتثبيت برامج.</p>
+                </div>
+                <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                    <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">مجاني</span>
+                    <a href="#" class="text-indigo-600 font-semibold text-sm hover:underline">زيارة المورد ←</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition flex flex-col justify-between">
+                <div class="p-6">
+                    <span class="bg-blue-50 text-blue-600 text-xs font-semibold px-2.5 py-0.5 rounded-full">البرمجة</span>
+                    <h3 class="font-bold text-lg mt-3 text-gray-900">دليل الخوارزميات وبنية البيانات</h3>
+                    <p class="text-gray-600 text-sm mt-2">مرجع مفتوح المصدر يغطي أساسيات الخوارزميات مع أمثلة برمجية توضيحية متعددة اللغات.</p>
+                </div>
+                <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                    <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">مدفوع / مجاني</span>
+                    <a href="#" class="text-indigo-600 font-semibold text-sm hover:underline">زيارة المورد ←</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800 text-center text-sm">
+        <p>© 2026 جميع الحقوق محفوظة - دليل الموارد الرقمية العام.</p>
+    </footer>
+
+</body>
+</html>
