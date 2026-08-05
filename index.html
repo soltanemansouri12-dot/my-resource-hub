@@ -8,37 +8,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: system-ui, -apple-system, sans-serif; }
-        /* تنسيق عنصر ترجمة جوجل ليكون متناسقاً ونظيفاً داخل الصفحة */
+        
+        /* تنسيق مخصص لصندوق اختيار اللغات ليظهر بشكل مرتب جداً على الهواتف */
         .goog-te-combo {
-            padding: 4px 8px;
-            border-radius: 6px;
-            border: 1px solid #e5e7eb;
-            background-color: #f9fafb;
-            font-size: 13px;
-            color: #374151;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            background-color: #ffffff;
+            font-size: 14px;
+            color: #1e293b;
             outline: none;
+            max-width: 140px;
         }
-        /* إخفاء شريط شعار جوجل العلوي إن ظهر */
+        /* إخفاء شريط شعار جوجل المزعج إن ظهر */
         .goog-te-banner-frame { display: none !important; }
         body { top: 0px !important; }
+        
+        /* إخفاء تلميحات الترجمة الافتراضية لمنع أي تداخل بصري */
+        .goog-tooltip { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <!-- شريط العلوي المنظم بدقة للهواتف والشاشات الصغيرة -->
-    <header class="bg-white shadow-sm py-3 px-4 flex justify-between items-center">
-        <h1 class="text-base sm:text-xl font-bold text-blue-600 truncate">منصتي الرقمية</h1>
-        <!-- أداة اختيار اللغات بحجم مدمج -->
-        <div id="google_translate_element" class="shrink-0"></div>
+    <header class="bg-white shadow-sm py-3 px-4 flex justify-between items-center border-b border-gray-100">
+        <h1 class="text-lg font-bold text-blue-600">منصتي الرقمية</h1>
+        <!-- أداة اختيار اللغات -->
+        <div id="google_translate_element"></div>
     </header>
 
     <!-- المحتوى الرئيسي -->
-    <main class="max-w-4xl mx-auto p-4 space-y-6 mt-4">
+    <main class="max-w-4xl mx-auto p-4 space-y-6 mt-2">
         
         <!-- قسم ترحيبي -->
         <section class="bg-white p-6 rounded-2xl shadow-sm text-center">
             <h2 class="text-2xl font-bold mb-2">مرحباً بك في منصتنا الرقمية</h2>
-            <p class="text-gray-600">اختر الخدمة أو الأداة المجانية المناسبة لك، وتواصل معنا مباشرة عبر واتساب عند الحاجة.</p>
+            <p class="text-gray-600 text-sm sm:text-base">اختر الخدمة أو الأداة المجانية المناسبة لك، وتواصل معنا مباشرة عبر واتساب عند الحاجة.</p>
         </section>
 
         <!-- الخدمات والمنتجات المدفوعة أو الأساسية -->
