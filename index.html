@@ -10,11 +10,11 @@
         body { font-family: system-ui, -apple-system, sans-serif; }
         /* تنسيق عنصر ترجمة جوجل ليكون متناسقاً ونظيفاً داخل الصفحة */
         .goog-te-combo {
-            padding: 6px 10px;
-            border-radius: 8px;
+            padding: 4px 8px;
+            border-radius: 6px;
             border: 1px solid #e5e7eb;
             background-color: #f9fafb;
-            font-size: 14px;
+            font-size: 13px;
             color: #374151;
             outline: none;
         }
@@ -25,11 +25,11 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- شريط العلوي المنظم -->
-    <header class="bg-white shadow-sm py-3 px-4 md:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <h1 class="text-xl font-bold text-blue-600">منصتي الرقمية</h1>
-        <!-- أداة اختيار اللغات بشكل أنيق -->
-        <div id="google_translate_element"></div>
+    <!-- شريط العلوي المنظم بدقة للهواتف والشاشات الصغيرة -->
+    <header class="bg-white shadow-sm py-3 px-4 flex justify-between items-center">
+        <h1 class="text-base sm:text-xl font-bold text-blue-600 truncate">منصتي الرقمية</h1>
+        <!-- أداة اختيار اللغات بحجم مدمج -->
+        <div id="google_translate_element" class="shrink-0"></div>
     </header>
 
     <!-- المحتوى الرئيسي -->
@@ -72,7 +72,7 @@
 
         </div>
 
-        <!-- قسم الأدوات المجانية الجديدة -->
+        <!-- قسم الأدوات المجانية -->
         <section class="mt-8">
             <h3 class="text-xl font-bold mb-4 text-gray-700">🛠️ أدوات رقمية مجانية للزوار</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -111,7 +111,7 @@
         جميع الحقوق محفوظة © 2026
     </footer>
 
-    <!-- سكربت ترجمة جوجل -->
+    <!-- سكربت ترجمة جوجل للغات الست -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -125,5 +125,4 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
-    </html>
-    
+</html>
