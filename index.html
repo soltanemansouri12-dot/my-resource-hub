@@ -39,6 +39,14 @@
         </div>
     </div>
 
+    <!-- 1. إضافة شريط الأخبار التعليمية العاجلة المتحرك -->
+    <div class="bg-yellow-500 text-gray-900 py-2 px-4 text-xs font-bold flex items-center shadow-inner overflow-hidden">
+        <span class="bg-yellow-700 text-white px-2 py-0.5 rounded ml-3 shrink-0">عاجل 📢</span>
+        <marquee behavior="scroll" direction="right" scrollamount="4">
+            تحديثات هامّة: مستجدات الأرضية الرقمية لوزارة التربية الوطنية، توفر قوالب التدرجات السنوية الجديدة، وترقب إعلانات المسابقات المهنية والتوظيف لسنة 2026.
+        </marquee>
+    </div>
+
     <!-- شريط العنوان الرئيسي وزر التواصل -->
     <header class="bg-white shadow-sm py-3 px-4 md:px-8 flex justify-between items-center border-b border-gray-100">
         <div class="flex items-center gap-3">
@@ -80,14 +88,14 @@
         
         <h3 class="text-xl font-bold text-gray-800 border-r-4 border-indigo-600 pr-3">قائمة المنتجات الرقمية (للشراء الفوري)</h3>
 
-        <!-- شبكة المنتجات المدفوعة -->
+        <!-- شبكة المنتجات المدفوعة (مع تقييمات بالنجوم وثقة الزبائن) -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             
             <!-- المنتج 1 -->
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center">
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full font-medium">الأكثر مبيعاً</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full font-medium">الأكثر مبيعاً ⭐ 4.9/5</span>
                         <span class="text-lg font-extrabold text-blue-600">1,500 د.ج</span>
                     </div>
                     <h4 class="font-bold text-lg mt-3">دفتر الأستاذ الرقمي الشامل</h4>
@@ -103,7 +111,7 @@
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center">
-                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2.5 py-1 rounded-full font-medium">مميز</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2.5 py-1 rounded-full font-medium">مميز ⭐ 4.8/5</span>
                         <span class="text-lg font-extrabold text-blue-600">2,000 د.ج</span>
                     </div>
                     <h4 class="font-bold text-lg mt-3">قوالب المذكرات البيداغوجية الجاهزة</h4>
@@ -119,7 +127,7 @@
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center">
-                        <span class="bg-green-100 text-green-800 text-xs px-2.5 py-1 rounded-full font-medium">محدث 2026</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2.5 py-1 rounded-full font-medium">محدث 2026 ⭐ 5.0/5</span>
                         <span class="text-lg font-extrabold text-blue-600">1,800 د.ج</span>
                     </div>
                     <h4 class="font-bold text-lg mt-3">بنك الامتحانات والاختبارات المحلولة</h4>
@@ -135,7 +143,7 @@
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center">
-                        <span class="bg-purple-100 text-purple-800 text-xs px-2.5 py-1 rounded-full font-medium">عروض خاصة</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2.5 py-1 rounded-full font-medium">عروض خاصة ⭐ 4.7/5</span>
                         <span class="text-lg font-extrabold text-blue-600">1,000 د.ج</span>
                     </div>
                     <h4 class="font-bold text-lg mt-3">بطاقات التميز والتحفيز للتلاميذ</h4>
@@ -148,6 +156,35 @@
             </div>
 
         </div>
+
+        <!-- 3. قسم "أحدث الملفات المضافة مجاناً" (محتوى متجدد أسبوعياً) -->
+        <section class="mt-10 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 p-5 rounded-2xl">
+            <h3 class="text-xl font-bold mb-3 text-blue-900 border-r-4 border-blue-600 pr-3">📂 أحدث الملفات والموارد المجانية (تتجدد أسبوعياً)</h3>
+            <p class="text-xs text-blue-700 mb-4">قم بتحميل أحدث التدرجات والتوزيعات الشهرية المجهزة مجاناً لدعم زوار الموقع:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                <div class="bg-white p-3 rounded-xl border border-blue-100 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold text-xs text-gray-800">التوزيع الشهري (ابتدائي)</h5>
+                        <span class="text-[10px] text-gray-400">صيغة PDF - مجاني</span>
+                    </div>
+                    <a href="https://wa.me/213666164823?text=أريد طلب ملف التوزيع الشهري المجاني" target="_blank" class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold hover:bg-blue-700">تحميل</a>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-blue-100 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold text-xs text-gray-800">وضعية إدماجية نموذجية</h5>
+                        <span class="text-[10px] text-gray-400">صيغة Word - مجاني</span>
+                    </div>
+                    <a href="https://wa.me/213666164823?text=أريد طلب نموذج الوضعية الإدماجية المجانية" target="_blank" class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold hover:bg-blue-700">تحميل</a>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-blue-100 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold text-xs text-gray-800">كشف نقاط فارغ ومنظم</h5>
+                        <span class="text-[10px] text-gray-400">صيغة Excel - مجاني</span>
+                    </div>
+                    <a href="https://wa.me/213666164823?text=أريد طلب كشف النقاط الفارغ المجاني" target="_blank" class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold hover:bg-blue-700">تحميل</a>
+                </div>
+            </div>
+        </section>
 
         <!-- قسم الأدوات والخدمات المجانية الموجهة للجمهور -->
         <section class="mt-10">
@@ -163,6 +200,18 @@
                     </div>
                     <div class="mt-4 pt-2 border-t border-emerald-200 flex justify-end">
                         <a href="https://concours.onec.dz" target="_blank" class="bg-emerald-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-emerald-700 transition">فحص النتائج</a>
+                    </div>
+                </div>
+
+                <!-- 2. خدمة متابعة مديريات التربية والطلبات الإدارية -->
+                <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2 py-0.5 rounded-full font-medium">الخدمات الإدارية</span>
+                        <h4 class="font-bold text-base mt-2 text-indigo-900">طلبات مديريات التربية</h4>
+                        <p class="text-indigo-700 text-xs mt-1">نماذج طلبات الاستخلاف، الاستقالة، والطعون الموجهة لمديريات التربية عبر الوطن.</p>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-indigo-200 flex justify-end">
+                        <a href="https://wa.me/213666164823?text=مرحباً، أبحث عن نموذج طلب إداري موجه لمديرية التربية" target="_blank" class="bg-indigo-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-indigo-700 transition">طلب النموذج</a>
                     </div>
                 </div>
 
@@ -214,42 +263,6 @@
                     </div>
                 </div>
 
-                <!-- أداة 3 -->
-                <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2 py-0.5 rounded-full font-medium">مجاني 100%</span>
-                        <h4 class="font-bold text-base mt-2 text-indigo-900">صانع رمز الاستجابة السريع QR</h4>
-                        <p class="text-indigo-700 text-xs mt-1">حول أي رابط درس أو فيديو تعليمي إلى باركود QR قابل للمسح بالكاميرا.</p>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-indigo-200 flex justify-end">
-                        <a href="https://ar.qr-code-generator.com/" target="_blank" class="bg-indigo-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
-                    </div>
-                </div>
-
-                <!-- أداة 4 -->
-                <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2 py-0.5 rounded-full font-medium">مجاني 100%</span>
-                        <h4 class="font-bold text-base mt-2 text-indigo-900">إزالة خلفيات الصور التعليمية</h4>
-                        <p class="text-indigo-700 text-xs mt-1">امسح خلفية الصور بدقة عالية لدمجها نظيفة داخل المذكرات والبحوث.</p>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-indigo-200 flex justify-end">
-                        <a href="https://www.remove.bg/ar" target="_blank" class="bg-indigo-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
-                    </div>
-                </div>
-
-                <!-- أداة 5 -->
-                <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2 py-0.5 rounded-full font-medium">مجاني 100%</span>
-                        <h4 class="font-bold text-base mt-2 text-indigo-900">محول الصيغ والملفات أونلاين</h4>
-                        <p class="text-indigo-700 text-xs mt-1">حول ملفات Word إلى PDF أو العكس بكل سلاسة وبدون برامج معقدة.</p>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-indigo-200 flex justify-end">
-                        <a href="https://smallpdf.com/ar" target="_blank" class="bg-indigo-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -283,29 +296,4 @@
         <section class="mt-10">
             <h3 class="text-xl font-bold mb-4 text-gray-800 border-r-4 border-indigo-600 pr-3">❓ الأسئلة الشائعة</h3>
             <div class="space-y-3">
-                
-                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                    <h4 class="font-bold text-sm text-gray-800">كيف يتم استلام المنتجات الرقمية بعد الشراء؟</h4>
-                    <p class="text-gray-500 text-xs mt-1">بمجرد إتمام الدفع والتواصل معنا عبر واتساب، يتم إرسال رابط التحميل المباشر للملف (PDF أو Word) إليك فوراً.</p>
-                </div>
-
-                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                    <h4 class="font-bold text-sm text-gray-800">هل الملفات قابلة للتعديل؟</h4>
-                    <p class="text-gray-500 text-xs mt-1">نعم، معظم قوالب المذكرات ودفاتر الأستاذ مصممة لتكون قابلة للتعديل بسهولة لتناسب احتياجاتك التربوية.</p>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- تذييل الصفحة -->
-    <footer class="text-center py-6 text-gray-400 text-xs mt-10 border-t border-gray-100 bg-white">
-        جميع الحقوق محفوظة © 2026 - متجر الأستاذ الجزائري الرقمي
-    </footer>
-
-    <!-- سكربت ترجمة جوجل للغات الست -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                page
+ 
