@@ -3,36 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة البيع والشراء</title>
+    <title>منصتي الرقمية</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; text-align: center; }
-        .container { max-width: 800px; margin: auto; }
-        .product-card { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .available { color: green; font-weight: bold; }
-        .sold { color: red; font-weight: bold; }
-        .btn { display: inline-block; padding: 10px 20px; background-color: #25d366; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        body {
+            font-family: 'Cairo', Tahoma, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .section {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .ad-space {
+            background: #e2e8f0;
+            border: 2px dashed #94a3b8;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            color: #64748b;
+            margin: 20px 0;
+        }
+        .rip-box {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #2563eb;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #64748b;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>سوق المنصة الرقمي</h1>
-    
-    <!-- عينة لعرض بيع حقيقي -->
-    <div class="product-card">
-        <h3>جهاز إلكتروني متطور</h3>
-        <p>السعر: 50,000 دج</p>
-        <p class="available">الحالة: متوفر للبيع</p>
-        <a href="https://wa.me/213XXXXXXXXXX?text=أنا مهتم بشراء جهاز إلكتروني متطور" class="btn">شراء الآن عبر واتساب</a>
+    <header>
+        <h1>مرحباً بكم في منصتي الرقمية</h1>
+        <p>موقعك الشخصي والمميز على شبكة الإنترنت</p>
+    </header>
+
+    <div class="container">
+        <!-- المساحة الإعلانية -->
+        <div class="ad-space">
+            مساحة إعلانية مخصصة
+        </div>
+
+        <!-- قسم نبذة عن المنصة -->
+        <div class="section">
+            <h2>عن المنصة</h2>
+            <p>هذه المنصة مصممة لتكون مركزك الرقمي الخاص لعرض الخدمات، التواصل، ومشاركة الأدوات والمحتوى بكل احترافية.</p>
+        </div>
+
+        <!-- قسم عرض وإخفاء رقم الحساب (RIP) -->
+        <div class="section">
+            <h2>رقم الحساب البنكي (RIP)</h2>
+            <div class="rip-box">
+                <span id="ripText" style="letter-spacing: 2px; font-family: monospace;">********************</span>
+                <button class="btn" onclick="toggleRip()">إظهار / إخفاء</button>
+            </div>
+        </div>
+
+        <!-- قسم الأدوات والخدمات -->
+        <div class="section">
+            <h2>الأدوات المتاحة</h2>
+            <p>استمتع بالأدوات والخدمات الرقمية المتكاملة المتاحة للزوار.</p>
+        </div>
     </div>
 
-    <div class="product-card">
-        <h3>أدوات رياضية</h3>
-        <p>السعر: 15,000 دج</p>
-        <p class="sold">الحالة: تم البيع</p>
-        <button class="btn" style="background-color:gray" disabled>غير متوفر</button>
-    </div>
-</div>
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026</p>
+    </footer>
+
+    <script>
+        // دالة عرض وإخفاء رقم الحساب الآمن
+        let isVisible = false;
+        const actualRip = "00123456789012345678"; // قم بتعديل هذا الرقم برقم حسابك الحقيقي إن أردت
+
+        function toggleRip() {
+            const ripElement = document.getElementById("ripText");
+            isVisible = !isVisible;
+            if (isVisible) {
+                ripElement.innerText = actualRip;
+            } else {
+                ripElement.innerText = "********************";
+            }
+        }
+    </script>
 
 </body>
 </html>
