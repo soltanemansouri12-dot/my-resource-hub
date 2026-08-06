@@ -65,7 +65,7 @@
         </div>
     </section>
 
-    <!-- صندوق إرشادات الدفع والثقة (بريد موب المباشر) -->
+    <!-- صندوق إرشادات الدفع والثقة (مع إخفاء رقم RIP وجعله آمناً) -->
     <div class="max-w-4xl mx-auto px-4 my-6">
         <div class="bg-indigo-50 border border-indigo-200 rounded-2xl p-6 text-indigo-900 shadow-sm">
             <div class="flex items-center gap-2 mb-3">
@@ -74,11 +74,17 @@
             </div>
             <p class="text-sm text-indigo-700 leading-relaxed mb-3">
                 1. تصفح عينات الصور أدناه للتأكد من جودة العمل، ثم اختر الحزمة المطلوبة.<br>
-                2. قم بتحويل المبلغ عبر تطبيق <strong>بريد موب (BaridiMob)</strong> على الحساب التالي:
+                2. قم بتحويل المبلغ عبر تطبيق <strong>بريد موب (BaridiMob)</strong> على الحساب (RIP) الآمن:
             </p>
-            <div class="bg-white p-3 rounded-xl border border-indigo-100 font-mono text-center text-blue-600 font-extrabold text-base tracking-wider">
-                00799999002364098562
+            
+            <!-- حقل رقم RIP المخفي جزئياً مع زر إظهار -->
+            <div class="bg-white p-3 rounded-xl border border-indigo-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <span id="ripText" class="font-mono text-blue-600 font-extrabold text-sm sm:text-base tracking-wider">00799999****************</span>
+                <button onclick="toggleRip()" id="ripBtn" class="bg-indigo-100 hover:bg-indigo-200 text-indigo-800 px-3 py-1.5 rounded-lg text-xs font-bold transition whitespace-nowrap">
+                    👁️ إظهار الرقم كاملاً
+                </button>
             </div>
+
             <p class="text-xs text-indigo-600 mt-3 text-center">
                 3. أرسل إيصال الدفع عبر الواتساب، وسنرسل لك روابط التحميل الفورية مباشرة! 🚀
             </p>
@@ -100,7 +106,6 @@
                 <!-- 1. المعلقات -->
                 <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col justify-between">
                     <div>
-                        <!-- صورة المعاينة الحقيقية (استبدل الرابط برابط صورتك الحقيقية لاحقاً) -->
                         <div class="h-40 bg-gray-200 relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=500&q=80" alt="معاينة المعلقات التربوية" class="w-full h-full object-cover">
                             <span class="absolute bottom-2 right-2 bg-black/70 text-white text-[10px] px-2 py-0.5 rounded-md">معاينة حية</span>
@@ -271,10 +276,4 @@
                     </div>
                     <div class="p-5 pt-0 border-t border-gray-100 flex justify-between items-center mt-4">
                         <span class="text-gray-400 text-xs">أرشيف شامل ومنظم</span>
-                        <a href="https://wa.me/213666164823?text=مرحباً، أريد شراء بنك الامتحانات والاختبارات (1800 دج) عبر بريد موب" target="_blank" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-indigo-700 transition shadow-sm">شراء الآن 🛒</a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col justify-between">
-                    <div>
-                        <div
+                        <a href="https://wa.me/213666164823?text=مرحباً، أريد شراء بنك الامتحانات والاختبارات (1800 دج) عبر بريد موب" target="_blank" class="bg-indigo-600 te
