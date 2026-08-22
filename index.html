@@ -1,11 +1,300 @@
-أهم التعديلات اللي عملتها:
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الأستاذ الرقمي | مذكرات، دفاتر واختبارات جاهزة للمعلمين</title>
+    <meta name="description" content="منتجات رقمية احترافية للأساتذة والمعلمين: دفتر الأستاذ الرقمي، قوالب المذكرات البيداغوجية، وبنك الاختبارات المحلولة.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; }
 
-- **حذفت التقييمات الوهمية** واستبدلتها بقسم صادق "لم تُنشر تقييمات بعد" مع دعوة للزوار الحقيقيين لمشاركة رأيهم
-- **أكملت الكود الناقص** وأضفت تذييل (footer) كامل
-- **استبدلت `<marquee>`** بشريط متحرك بـ CSS حديث (ويحترم إعدادات تقليل الحركة)
-- **زر واتساب عائم** بدل الزر الثابت في الأعلى، عشان ميشتتش الزائر أول ما يدخل
-- **أضفت قسم أسئلة شائعة** (كيفية الاستلام، سياسة الاسترجاع) لبناء الثقة
-- **مؤشرات ثقة** تحت خانة البحث (تسليم فوري، دفع آمن، متوافق مع المناهج)
-- حذفت أداة ترجمة جوجل غير المفعّلة لتفادي عنصر معطّل في الصفحة
+        /* شريط الإعلان العاجل - تمرير بسيط بدل marquee القديم */
+        .ticker-track {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 28s linear infinite;
+        }
+        @keyframes ticker {
+            0%   { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .ticker-track { animation: none; }
+        }
 
-بقيت نقطة مهمة ما قدرت أحلها بالكود وحده: **نظام الدفع لا يزال عبر واتساب فقط** بدون بوابة دفع حقيقية أو تسليم تلقائي. هذا قرار يحتاج ربط خدمة خارجية (مثل Chargily) — قل لي إذا تحب نبدأ فيه.
+        /* زر واتساب عائم */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 50;
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 3px solid #4f46e5;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- شريط الأخبار العاجلة -->
+    <div class="bg-yellow-500 text-gray-900 py-2 px-4 text-xs font-bold flex items-center shadow-inner overflow-hidden">
+        <span class="bg-yellow-700 text-white px-2 py-0.5 rounded ml-3 shrink-0">عاجل 📢</span>
+        <div class="overflow-hidden w-full">
+            <span class="ticker-track">
+                تحديثات هامّة: مستجدات الأرضية الرقمية لوزارة التربية الوطنية، توفر قوالب التدرجات السنوية الجديدة، وترقب إعلانات المسابقات المهنية والتوظيف لسنة 2026.
+            </span>
+        </div>
+    </div>
+
+    <!-- الترويسة -->
+    <header class="bg-white shadow-sm py-3 px-4 md:px-8 flex justify-between items-center border-b border-gray-100">
+        <a href="https://wa.me/213666164823?text=مرحباً، أريد الاستفسار عن المنتجات الرقمية في المتجر" target="_blank" rel="noopener" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition shadow-sm">
+            تواصل معنا عبر واتساب
+        </a>
+        <div class="flex items-center gap-2">
+            <h1 class="text-base sm:text-lg font-bold text-blue-600">متجر الأستاذ الرقمي</h1>
+            <span class="text-xl">🛍️</span>
+        </div>
+    </header>
+
+    <!-- الهيرو -->
+    <section class="bg-gradient-to-br from-indigo-700 via-purple-600 to-blue-600 text-white py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">منتجات رقمية احترافية للأساتذة والمعلمين</h2>
+            <p class="text-indigo-100 text-sm sm:text-base max-w-xl mx-auto">احصل على أقوى المذكرات، دفاتر الأستاذ الرقمية، وبنك الاختبارات الجاهزة لتطوير عملك التربوي.</p>
+
+            <form onsubmit="return false;" class="bg-white p-2 rounded-2xl shadow-lg max-w-xl mx-auto flex items-center">
+                <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-xl text-sm font-medium transition">بحث</button>
+                <input type="text" placeholder="ابحث عن منتج، مذكرة، اختبار..." class="w-full px-4 text-gray-700 bg-transparent outline-none text-right text-sm" aria-label="البحث عن منتج">
+            </form>
+
+            <div class="flex flex-wrap justify-center gap-4 text-xs text-indigo-100 pt-2">
+                <span>✅ تسليم فوري بعد الدفع</span>
+                <span>🔒 دفع آمن</span>
+                <span>🇩🇿 محتوى متوافق مع مناهج وزارة التربية الجزائرية</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- مساحة إعلانية -->
+    <div class="max-w-4xl mx-auto px-4 my-6">
+        <div class="border-2 border-dashed border-gray-200 rounded-2xl p-6 text-center text-gray-400 text-sm bg-white">
+            <span class="bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full font-medium inline-block mb-2">إعلان</span>
+            <p>مساحة إعلانية (Google AdSense)</p>
+        </div>
+    </div>
+
+    <main class="max-w-4xl mx-auto p-4 space-y-8">
+
+        <h3 class="text-xl font-bold text-gray-800 border-r-4 border-indigo-600 pr-3">قائمة المنتجات الرقمية</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full font-medium">الأكثر مبيعاً</span>
+                        <span class="text-lg font-extrabold text-blue-600">1,500 د.ج</span>
+                    </div>
+                    <h4 class="font-bold text-lg mt-3">دفتر الأستاذ الرقمي الشامل</h4>
+                    <p class="text-gray-500 text-sm mt-1">جداول التوقيت، متابعة الغياب، تقييم التلاميذ، ورزنامة العطل الرسمية في الجزائر.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-gray-400 text-xs">تحميل فوري بصيغة PDF</span>
+                    <a href="https://wa.me/213666164823?text=مرحباً، أريد شراء دفتر الأستاذ الرقمي (1500 دج)" target="_blank" rel="noopener" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-indigo-700 transition shadow-sm">شراء الآن</a>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2.5 py-1 rounded-full font-medium">مميز</span>
+                        <span class="text-lg font-extrabold text-blue-600">2,000 د.ج</span>
+                    </div>
+                    <h4 class="font-bold text-lg mt-3">قوالب المذكرات البيداغوجية الجاهزة</h4>
+                    <p class="text-gray-500 text-sm mt-1">نماذج مذكرات تربوية منسقة وفق مناهج وزارة التربية (ابتدائي، متوسط، ثانوي) قابلة للتعديل.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-gray-400 text-xs">ملفات Word قابلة للتعديل</span>
+                    <a href="https://wa.me/213666164823?text=مرحباً، أريد شراء قوالب المذكرات البيداغوجية (2000 دج)" target="_blank" rel="noopener" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-indigo-700 transition shadow-sm">شراء الآن</a>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-green-100 text-green-800 text-xs px-2.5 py-1 rounded-full font-medium">محدث 2026</span>
+                        <span class="text-lg font-extrabold text-blue-600">1,800 د.ج</span>
+                    </div>
+                    <h4 class="font-bold text-lg mt-3">بنك الامتحانات والاختبارات المحلولة</h4>
+                    <p class="text-gray-500 text-sm mt-1">مواضيع الفروض والاختبارات الثلاثية السابقة لجميع المواد مرفقة بالإجابة النموذجية.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-gray-400 text-xs">أرشيف شامل ومنظم</span>
+                    <a href="https://wa.me/213666164823?text=مرحباً، أريد شراء بنك الامتحانات والاختبارات (1800 دج)" target="_blank" rel="noopener" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-indigo-700 transition shadow-sm">شراء الآن</a>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2.5 py-1 rounded-full font-medium">عروض خاصة</span>
+                        <span class="text-lg font-extrabold text-blue-600">1,000 د.ج</span>
+                    </div>
+                    <h4 class="font-bold text-lg mt-3">بطاقات التميز والتحفيز للتلاميذ</h4>
+                    <p class="text-gray-500 text-sm mt-1">شهادات تقدير، نجوم تحفيزية، وبطاقات ملاحظات إيجابية لخلق جو تنافسي في القسم.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-gray-400 text-xs">جاهزة للطباعة بجودة عالية</span>
+                    <a href="https://wa.me/213666164823?text=مرحباً، أريد شراء بطاقات التحفيز والتميز (1000 دج)" target="_blank" rel="noopener" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-indigo-700 transition shadow-sm">شراء الآن</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- الملفات المجانية -->
+        <section class="mt-10 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 p-5 rounded-2xl">
+            <h3 class="text-xl font-bold mb-3 text-blue-900 border-r-4 border-blue-600 pr-3">📂 أحدث الملفات والموارد المجانية</h3>
+            <p class="text-xs text-blue-700 mb-4">تدرجات وتوزيعات شهرية مجهزة مجاناً لدعم زوار الموقع:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                <div class="bg-white p-3 rounded-xl border border-blue-100 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold text-xs text-gray-800">التوزيع الشهري (ابتدائي)</h5>
+                        <span class="text-[10px] text-gray-400">صيغة PDF - مجاني</span>
+                    </div>
+                    <a href="https://wa.me/213666164823?text=أريد طلب ملف التوزيع الشهري المجاني" target="_blank" rel="noopener" class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold hover:bg-blue-700">تحميل</a>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-blue-100 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold text-xs text-gray-800">وضعية إدماجية نموذجية</h5>
+                        <span class="text-[10px] text-gray-400">صيغة Word - مجاني</span>
+                    </div>
+                    <a href="https://wa.me/213666164823?text=أريد طلب نموذج الوضعية الإدماجية المجانية" target="_blank" rel="noopener" class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold hover:bg-blue-700">تحميل</a>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-blue-100 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold text-xs text-gray-800">كشف نقاط فارغ ومنظم</h5>
+                        <span class="text-[10px] text-gray-400">صيغة Excel - مجاني</span>
+                    </div>
+                    <a href="https://wa.me/213666164823?text=أريد طلب كشف النقاط الفارغ المجاني" target="_blank" rel="noopener" class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold hover:bg-blue-700">تحميل</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- الأدوات المجانية -->
+        <section class="mt-10">
+            <h3 class="text-xl font-bold mb-4 text-gray-800 border-r-4 border-indigo-600 pr-3">🛠️ خدمات وأدوات رقمية مجانية للأساتذة والزوار</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl flex flex-col justify-between shadow-sm">
+                    <div>
+                        <span class="bg-emerald-200 text-emerald-900 text-xs px-2 py-0.5 rounded-full font-bold">رسمي ومجاني</span>
+                        <h4 class="font-bold text-base mt-2 text-emerald-950">نتائج مسابقة توظيف الأساتذة</h4>
+                        <p class="text-emerald-800 text-xs mt-1">الرابط المباشر لمنصة الديوان الوطني للاطلاع على النتائج الشخصية برقم التسجيل.</p>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-emerald-200 flex justify-end">
+                        <a href="https://concours.onec.dz" target="_blank" rel="noopener" class="bg-emerald-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-emerald-700 transition">فحص النتائج</a>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2 py-0.5 rounded-full font-medium">الخدمات الإدارية</span>
+                        <h4 class="font-bold text-base mt-2 text-indigo-900">طلبات مديريات التربية</h4>
+                        <p class="text-indigo-700 text-xs mt-1">نماذج طلبات الاستخلاف، الاستقالة، والطعون الموجهة لمديريات التربية عبر الوطن.</p>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-indigo-200 flex justify-end">
+                        <a href="https://wa.me/213666164823?text=مرحباً، أبحث عن نموذج طلب إداري موجه لمديرية التربية" target="_blank" rel="noopener" class="bg-indigo-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-indigo-700 transition">طلب النموذج</a>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2 py-0.5 rounded-full font-medium">أداة تفاعلية</span>
+                        <h4 class="font-bold text-base mt-2 text-indigo-900">حساب المعدلات الفصلية</h4>
+                        <p class="text-indigo-700 text-xs mt-1">احسب معدل الفصول الدراسية للتلاميذ بكل سهولة ووفق المعاملات الرسمية.</p>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-indigo-200 flex justify-end">
+                        <a href="https://www.awraqa.com/" target="_blank" rel="noopener" class="bg-indigo-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2 py-0.5 rounded-full font-medium">تصميم جاهز</span>
+                        <h4 class="font-bold text-base mt-2 text-indigo-900">تصميم الشهادات والبطاقات</h4>
+                        <p class="text-indigo-700 text-xs mt-1">أنشئ شهادات تقدير وبطاقات مدرسية احترافية بضغطة زر واحدة عبر منصة كانفا.</p>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-indigo-200 flex justify-end">
+                        <a href="https://www.canva.com/ar_eg/" target="_blank" rel="noopener" class="bg-indigo-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2 py-0.5 rounded-full font-medium">مجاني 100%</span>
+                        <h4 class="font-bold text-base mt-2 text-indigo-900">مولد روابط واتساب للأولياء</h4>
+                        <p class="text-indigo-700 text-xs mt-1">تواصل بذكاء مع أولياء التلاميذ عبر رسائل واتساب جاهزة ومجهزة مسبقاً.</p>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-indigo-200 flex justify-end">
+                        <a href="https://wa.link/ar" target="_blank" rel="noopener" class="bg-indigo-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="bg-indigo-200 text-indigo-800 text-xs px-2 py-0.5 rounded-full font-medium">مجاني 100%</span>
+                        <h4 class="font-bold text-base mt-2 text-indigo-900">ضغط وتصغير صور الامتحانات</h4>
+                        <p class="text-indigo-700 text-xs mt-1">قلل حجم صور وملفات الـ PDF لتسهيل إرسالها للأساتذة والتلاميذ بسرعة.</p>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-indigo-200 flex justify-end">
+                        <a href="https://tinypng.com/" target="_blank" rel="noopener" class="bg-indigo-600 text-white px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-indigo-700 transition">استخدم الأداة</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- قسم الآراء: فارغ وصادق إلى حين توفر تقييمات حقيقية -->
+        <section class="mt-10">
+            <h3 class="text-xl font-bold mb-4 text-gray-800 border-r-4 border-indigo-600 pr-3">💬 آراء عملائنا</h3>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center text-sm text-gray-500">
+                لم تُنشر تقييمات بعد — كن أول من يشاركنا رأيه بعد تجربة أحد منتجاتنا.
+                <div class="mt-3">
+                    <a href="https://wa.me/213666164823?text=مرحباً، أريد مشاركة رأيي حول منتجاتكم" target="_blank" rel="noopener" class="text-indigo-600 font-bold hover:underline text-xs">شاركنا رأيك عبر واتساب ←</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- أسئلة شائعة لبناء الثقة -->
+        <section class="mt-10">
+            <h3 class="text-xl font-bold mb-4 text-gray-800 border-r-4 border-indigo-600 pr-3">❓ أسئلة شائعة</h3>
+            <div class="space-y-3">
+                <details class="bg-white p-4 rounded-xl border border-gray-100">
+                    <summary class="font-bold text-sm cursor-pointer">كيف أستلم المنتج بعد الدفع؟</summary>
+                    <p class="text-gray-500 text-xs mt-2">بعد إتمام الدفع عبر واتساب، يتم إرسال الملف مباشرة على نفس المحادثة خلال دقائق.</p>
+                </details>
+                <details class="bg-white p-4 rounded-xl border border-gray-100">
+                    <summary class="font-bold text-sm cursor-pointer">هل يمكن استرجاع المبلغ؟</summary>
+                    <p class="text-gray-500 text-xs mt-2">نظراً لطبيعة المنتجات الرقمية القابلة للتحميل الفوري، لا يمكن استرجاع المبلغ بعد إرسال الملف، إلا في حال وجود خلل تقني.</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-indigo-950 text-indigo-100 mt-12 py-8 px-4 text-center text-xs space-y-3">
+        <p class="font-bold text-white text-sm">متجر الأستاذ الرقمي</p>
+        <p>منتجات رقمية تعليمية للأساتذة والمعلمين في الجزائر.</p>
+        <p>
+            <a href="https://wa.me/213666164823" target="_blank" rel="noopener" class="hover:text-white underline">تواصل معنا عبر واتساب</a>
+        </p>
+        <p class="text-indigo-400">© 2026 متجر الأستاذ الرقمي. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- زر واتساب عائم -->
+    <a href="https://wa.me/213666164823?text=مرحباً، أريد الاستفسار عن المنتجات الرقمية في المتجر" target="_blank" rel="noopener" class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white w-14
